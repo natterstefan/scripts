@@ -5,7 +5,7 @@
 import path from 'path'
 import { exec, execSync, ExecException } from 'child_process'
 
-describe('CLI', () => {
+describe('CLI: current version', () => {
   function cli(args: any, cwd: any) {
     return new Promise<{
       code: number
@@ -28,62 +28,64 @@ describe('CLI', () => {
     })
   }
 
-  beforeEach(() => {
-    try {
-      execSync('git tag -d 99.99.99 2> /dev/null')
-    } catch (err) {
-      // e.g. tag does not exist yet
-    }
-  })
-
-  afterAll(() => {
-    execSync('git tag -d 99.99.99')
-  })
-
-  it('current-version command should return current commit hash in the console', async () => {
-    const result = await cli(['current-version'], '.')
-    expect(result.code).toStrictEqual(0)
-    expect(result.stdout.toString()).toHaveLength(7)
-  })
-
-  it('current-version command should return current version in the console', async () => {
-    execSync('git tag 99.99.99')
-
-    const result = await cli(['current-version'], '.')
-    expect(result.code).toStrictEqual(0)
-    expect(result.stdout).toStrictEqual('99.99.99')
-  })
-
-  describe('handle tags', () => {
+  describe('command version', () => {
     beforeEach(() => {
-      execSync('git commit -m "empty" --allow-empty')
+      try {
+        execSync('git tag -d 99.99.99 2> /dev/null')
+      } catch (err) {
+        // e.g. tag does not exist yet
+      }
+    })
+
+    afterAll(() => {
+      execSync('git tag -d 99.99.99')
+    })
+
+    it('current-version command should return current commit hash in the console', async () => {
+      const result = await cli(['current-version'], '.')
+      expect(result.code).toStrictEqual(0)
+      expect(result.stdout.toString()).toHaveLength(7)
+    })
+
+    it('current-version command should return current version in the console', async () => {
       execSync('git tag 99.99.99')
-    })
 
-    afterEach(() => {
-      execSync('git reset HEAD~1')
-    })
-
-    it('returns tag not commit hash when both are present', async () => {
       const result = await cli(['current-version'], '.')
       expect(result.code).toStrictEqual(0)
       expect(result.stdout).toStrictEqual('99.99.99')
     })
-  })
 
-  describe('dirty state', () => {
-    beforeEach(() => {
-      execSync('touch dirty.txt')
+    describe('handle tags', () => {
+      beforeEach(() => {
+        execSync('git commit -m "empty" --allow-empty')
+        execSync('git tag 99.99.99')
+      })
+
+      afterEach(() => {
+        execSync('git reset HEAD~1')
+      })
+
+      it('returns tag not commit hash when both are present', async () => {
+        const result = await cli(['current-version'], '.')
+        expect(result.code).toStrictEqual(0)
+        expect(result.stdout).toStrictEqual('99.99.99')
+      })
     })
 
-    afterEach(() => {
-      execSync('rm -rf dirty.txt')
-    })
+    describe('dirty state', () => {
+      beforeEach(() => {
+        execSync('touch dirty.txt')
+      })
 
-    it('returns dirt state', async () => {
-      const result = await cli(['current-version'], '.')
-      expect(result.code).toStrictEqual(0)
-      expect(result.stdout).toContain('.dirty')
+      afterEach(() => {
+        execSync('rm -rf dirty.txt')
+      })
+
+      it('returns dirt state', async () => {
+        const result = await cli(['current-version'], '.')
+        expect(result.code).toStrictEqual(0)
+        expect(result.stdout).toContain('.dirty')
+      })
     })
   })
 })

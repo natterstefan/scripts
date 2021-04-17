@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { execSync } from 'child_process'
-
 import { Command } from 'commander'
+
+import { getVersion } from './lib/version'
 
 const program = new Command()
 
@@ -16,20 +16,11 @@ program
   .alias('cv') // alias name
   // command description
   .description(
-    'Returns the short hash of the last commit or the current version',
+    'returns the current tag, or short hash of the last commit with a dirty flag when files were modified but not committed.',
   )
   // function to execute when command is uses
   .action(() => {
-    // inspired by https://gist.github.com/mjj2000/3ee188cc155c26a118b06116ad0ebd1d
-    const version = execSync(
-      'git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD',
-    )
-      .toString()
-      .trim()
-    const isDirty = execSync('git status --porcelain').toString().trim()
-    process.stdout.write(
-      [version, isDirty.length ? 'dirty' : ''].filter(Boolean).join('.'),
-    )
+    process.stdout.write(getVersion())
   })
 
 // allow commander to parse `process.argv`
