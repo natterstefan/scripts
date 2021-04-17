@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "lib": ["esnext"],
-    "declaration": true,
+    "declaration": false,
     "skipLibCheck": true,
     "allowJs": false,
     "jsx": "preserve",
