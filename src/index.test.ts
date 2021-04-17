@@ -54,24 +54,36 @@ describe('CLI', () => {
     expect(result.stdout).toStrictEqual('99.99.99')
   })
 
-  it('returns tag not commit hash when both are present', async () => {
-    execSync('git commit -m "empty" --allow-empty')
-    execSync('git tag 99.99.99')
+  describe('handle tags', () => {
+    beforeEach(() => {
+      execSync('git commit -m "empty" --allow-empty')
+      execSync('git tag 99.99.99')
+    })
 
-    const result = await cli(['current-version'], '.')
-    expect(result.code).toStrictEqual(0)
-    expect(result.stdout).toStrictEqual('99.99.99')
+    afterEach(() => {
+      execSync('git reset HEAD~1')
+    })
 
-    execSync('git reset HEAD~1')
+    it('returns tag not commit hash when both are present', async () => {
+      const result = await cli(['current-version'], '.')
+      expect(result.code).toStrictEqual(0)
+      expect(result.stdout).toStrictEqual('99.99.99')
+    })
   })
 
-  it('returns dirt state', async () => {
-    execSync('touch dirty.txt')
+  describe('dirty state', () => {
+    beforeEach(() => {
+      execSync('touch dirty.txt')
+    })
 
-    const result = await cli(['current-version'], '.')
-    expect(result.code).toStrictEqual(0)
-    expect(result.stdout).toContain('.dirty')
+    afterEach(() => {
+      execSync('rm -rf dirty.txt')
+    })
 
-    execSync('rm -rf dirty.txt')
+    it('returns dirt state', async () => {
+      const result = await cli(['current-version'], '.')
+      expect(result.code).toStrictEqual(0)
+      expect(result.stdout).toContain('.dirty')
+    })
   })
 })

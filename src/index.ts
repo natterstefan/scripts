@@ -27,7 +27,9 @@ program
       .toString()
       .trim()
     const isDirty = execSync('git status --porcelain').toString().trim()
-    process.stdout.write([version, isDirty.length ? 'dirty' : ''].join('.'))
+    process.stdout.write(
+      [version, isDirty.length ? 'dirty' : ''].filter(Boolean).join('.'),
+    )
   })
 
 // allow commander to parse `process.argv`
