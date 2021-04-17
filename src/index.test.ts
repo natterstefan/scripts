@@ -64,4 +64,14 @@ describe('CLI', () => {
 
     execSync('git reset HEAD~1')
   })
+
+  it('returns dirt state', async () => {
+    execSync('touch dirty.txt')
+
+    const result = await cli(['current-version'], '.')
+    expect(result.code).toStrictEqual(0)
+    expect(result.stdout).toContain('.dirty')
+
+    execSync('rm -rf dirty.txt')
+  })
 })
