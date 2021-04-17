@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "commonjs",
+    "lib": ["esnext"],
+    "declaration": true,
     "skipLibCheck": true,
     "allowJs": false,
     "jsx": "preserve",
@@ -22,7 +23,5 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["bin", "node_modules"]
+  }
 }

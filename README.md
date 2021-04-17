@@ -15,6 +15,10 @@ yarn build
 ## Start
 
 ```bash
+# development
+yarn dev
+
+# production
 node ./bin
 ```
 
