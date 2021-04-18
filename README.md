@@ -5,6 +5,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/natterstefan/scripts)](https://github.com/natterstefan/scripts/issues)
 [![GitHub license](https://img.shields.io/github/license/natterstefan/scripts)](https://github.com/natterstefan/scripts/blob/main/LICENSE)
 
+![natterstefan/nextjs-template](./assets/github.png)
+
 Utility package for several scripts I use throughout the day.
 
 ## Setup
