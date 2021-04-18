@@ -2,7 +2,7 @@ import commander from 'commander'
 
 import { getGitVersion } from '../../git/version'
 
-module.exports = (program: commander.Command) => {
+export default (program: commander.Command) => {
   // Prints current git version
   // $ ns-script git-version
   // $ ns-script gv

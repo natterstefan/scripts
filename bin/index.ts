@@ -10,17 +10,10 @@
  */
 import { Command } from 'commander'
 
-const program = new Command()
-const normalizedPath = require('path').join(__dirname)
+import gitVersion from './git/version'
 
-require('fs')
-  .readdirSync(`${normalizedPath}/git`)
-  .forEach((file: string) => {
-    if (file.endsWith('.d.ts')) {
-      // do not handle decleration files
-      return
-    }
-    require(`./git/${file}`)(program)
-  })
+const program = new Command()
+
+gitVersion(program)
 
 program.parse(process.argv)
