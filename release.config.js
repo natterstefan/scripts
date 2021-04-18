@@ -24,7 +24,12 @@ module.exports = {
       },
     ],
     // generate CHANGELOG.md
-    '@semantic-release/changelog',
+    [
+      '@semantic-release/changelog',
+      {
+        changelogTitle: '#@natterstefan/scripts Changelog',
+      },
+    ],
     // publish on npm
     '@semantic-release/npm',
     // publish a new release on github
