@@ -1,3 +1,10 @@
+### [1.0.5](https://github.com/natterstefan/scripts/compare/1.0.4...1.0.5) (2021-04-18)
+
+
+### Bug Fixes
+
+* add missing tslib dependency ([dc97f88](https://github.com/natterstefan/scripts/commit/dc97f885ea19b43f80ce1b29e40815f3c97fbb60))
+
 ### [1.0.4](https://github.com/natterstefan/scripts/compare/1.0.3...1.0.4) (2021-04-18)
 
 
