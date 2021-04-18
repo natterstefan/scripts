@@ -58,7 +58,7 @@ describe('CLI', () => {
 
     describe('handle tags', () => {
       beforeEach(() => {
-        execSync('git commit -m "empty" --allow-empty')
+        execSync('git commit -m "chore: empty" --allow-empty')
         execSync('git tag 99.99.99')
       })
 
