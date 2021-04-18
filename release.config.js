@@ -26,18 +26,14 @@ module.exports = {
     // generate CHANGELOG.md
     '@semantic-release/changelog',
     // publish on npm
-    [
-      '@semantic-release/npm',
-      {
-        pkgRoot: 'build',
-      },
-    ],
+    '@semantic-release/npm',
     // publish a new release on github
     [
       '@semantic-release/github',
       {
         assets: [
-          'build/**',
+          '**/*.js',
+          '**/*.d.ts',
           'CHANGELOG.md',
           'LICENSE',
           'package.json',

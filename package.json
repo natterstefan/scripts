@@ -24,7 +24,7 @@
     "prebuild": "rimraf build",
     "prepare": "husky install",
     "pretest": "yarn build",
-    "postversion": "yarn build && cp package.json LICENSE README.md build",
+    "postbuild": "cp package.json LICENSE README.md build",
     "test": "jest"
   },
   "dependencies": {
