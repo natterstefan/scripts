@@ -1,20 +1,30 @@
 {
-  "name": "ns-scripts",
+  "name": "@natterstefan/scripts",
   "version": "0.0.1",
   "description": "",
   "author": "Stefan Natter (https://natterstefan.me)",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/natterstefan/ns-scripts#readme",
+  "homepage": "https://github.com/natterstefan/scripts.git#readme",
   "bin": {
     "ns-scripts": "./bin/index.js"
   },
+  "engines": {
+    "node": ">=12.0.0 || >=14.0.0"
+  },
+  "files": [
+    "bin",
+    "commands",
+    "scripts",
+    "README.md"
+  ],
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node bin/index.ts",
     "build": "tsc -p tsconfig.build.json",
     "lint": "tsc && eslint --cache \"./**/*.{ts,tsx}\"",
-    "prebuild": "rimraf bin",
+    "prebuild": "rimraf build",
     "pretest": "yarn build",
-    "test": "jest ./src"
+    "postbuild": "cp package.json LICENSE README.md build",
+    "test": "jest"
   },
   "dependencies": {
     "commander": "^7.2.0"
@@ -42,9 +52,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natterstefan/ns-scripts.git"
+    "url": "git+https://github.com/natterstefan/scripts.git.git"
   },
   "bugs": {
-    "url": "https://github.com/natterstefan/ns-scripts/issues"
+    "url": "https://github.com/natterstefan/scripts.git/issues"
   }
 }

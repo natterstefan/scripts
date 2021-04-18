@@ -5,7 +5,7 @@
 import path from 'path'
 import { exec, execSync, ExecException } from 'child_process'
 
-describe('CLI: current version', () => {
+describe('CLI', () => {
   function cli(args: any, cwd: any) {
     return new Promise<{
       code: number
@@ -14,7 +14,7 @@ describe('CLI: current version', () => {
       stderr: string
     }>(resolve => {
       exec(
-        `node ${path.resolve('./bin/index.js')} ${args.join(' ')}`,
+        `node ${path.resolve('./build/bin/index.js')} ${args.join(' ')}`,
         { cwd },
         (error, stdout, stderr) => {
           resolve({
@@ -28,7 +28,7 @@ describe('CLI: current version', () => {
     })
   }
 
-  describe('command version', () => {
+  describe('command git-version', () => {
     beforeEach(() => {
       try {
         execSync('git tag -d 99.99.99 2> /dev/null')
@@ -41,18 +41,19 @@ describe('CLI: current version', () => {
       execSync('git tag -d 99.99.99')
     })
 
-    it('current-version command should return current commit hash in the console', async () => {
-      const result = await cli(['current-version'], '.')
+    it('git-version command should return current commit hash in the console', async () => {
+      const result = await cli(['git-version'], '.')
       expect(result.code).toStrictEqual(0)
-      expect(result.stdout.toString()).toHaveLength(7)
+      // 7 hash and \n
+      expect(result.stdout.toString()).toHaveLength(8)
     })
 
-    it('current-version command should return current version in the console', async () => {
+    it('git-version command should return current version in the console', async () => {
       execSync('git tag 99.99.99')
 
-      const result = await cli(['current-version'], '.')
+      const result = await cli(['git-version'], '.')
       expect(result.code).toStrictEqual(0)
-      expect(result.stdout).toStrictEqual('99.99.99')
+      expect(result.stdout).toStrictEqual('99.99.99\n')
     })
 
     describe('handle tags', () => {
@@ -66,9 +67,9 @@ describe('CLI: current version', () => {
       })
 
       it('returns tag not commit hash when both are present', async () => {
-        const result = await cli(['current-version'], '.')
+        const result = await cli(['git-version'], '.')
         expect(result.code).toStrictEqual(0)
-        expect(result.stdout).toStrictEqual('99.99.99')
+        expect(result.stdout).toStrictEqual('99.99.99\n')
       })
     })
 
@@ -82,7 +83,7 @@ describe('CLI: current version', () => {
       })
 
       it('returns dirt state', async () => {
-        const result = await cli(['current-version'], '.')
+        const result = await cli(['git-version'], '.')
         expect(result.code).toStrictEqual(0)
         expect(result.stdout).toContain('.dirty')
       })

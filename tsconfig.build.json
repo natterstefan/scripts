@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["./src/**/*.test.ts"]
+  "compilerOptions": {
+    "declaration": true,
+    "noEmit": false,
+    "removeComments": false,
+    "outDir": "build",
+  },
+  "exclude": ["./**/*.test.ts"]
 }
