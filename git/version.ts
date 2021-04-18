@@ -5,6 +5,18 @@ import { execSync } from 'child_process'
  * the current commit hash, the tag (if one exists for the current tag), or the
  * commit hash with the ".dirty" suffix when files have been modified but not
  * pushed yet.
+ *
+ * @example
+ * // current commit has tag
+ * 1.0.1
+ *
+ * @example
+ * // current commit has no tag
+ * e48ff15
+ *
+ * @example
+ * // current state is dirty
+ * e48ff15.dirty
  */
 export const getGitVersion = () => {
   // inspired by https://gist.github.com/mjj2000/3ee188cc155c26a118b06116ad0ebd1d

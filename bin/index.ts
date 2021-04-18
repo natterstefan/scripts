@@ -7,7 +7,6 @@
 
 import { Command } from 'commander'
 import chalk from 'chalk'
-import figlet from 'figlet'
 
 import pkg from '../package.json'
 
@@ -22,13 +21,7 @@ program
   .version(pkg.version)
   .description(pkg.description)
   .addHelpText('beforeAll', () =>
-    chalk.black(
-      chalk.bgHex('#FAC151')(
-        figlet.textSync('@natterstefan/scripts', {
-          horizontalLayout: 'full',
-        }),
-      ),
-    ),
+    chalk.black(chalk.bgHex('#FAC151')('\n-- @natterstefan/scripts --\n')),
   )
 
 program.parse(process.argv)
