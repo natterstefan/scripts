@@ -1,3 +1,12 @@
+# @natterstefan/scripts Changelog
+
+## [1.2.0](https://github.com/natterstefan/scripts/compare/1.1.0...1.2.0) (2021-04-18)
+
+
+### Features
+
+* removed figlet and render header for help command with chalk only ([f235e95](https://github.com/natterstefan/scripts/commit/f235e953c30be5597c70c671226eb777c3d4d3b3))
+
 #@natterstefan/scripts Changelog
 
 ## [1.1.0](https://github.com/natterstefan/scripts/compare/1.0.5...1.1.0) (2021-04-18)
