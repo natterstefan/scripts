@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/natterstefan/scripts/compare/1.0.0...1.0.1) (2021-04-18)
+
+
+### Bug Fixes
+
+* alias for git-version is gv instead of cv ([207e083](https://github.com/natterstefan/scripts/commit/207e083fdd65b9dafd96cd47bb77fcdf33db08ea))
+
 ## 1.0.0 (2021-04-18)
 
 
