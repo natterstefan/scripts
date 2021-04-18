@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: node_modules
           key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
@@ -25,11 +25,17 @@ jobs:
     needs: install
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+
+      - name: Set @natterstefan-bot as committer
+        run: |
+          git config user.name "natterstefan Bot"
+          git config user.email "natterstefan-bot@users.noreply.github.com"
+
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: node_modules
           key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
@@ -41,11 +47,11 @@ jobs:
     needs: validate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: node_modules
           key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
@@ -61,11 +67,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: node_modules
           key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
