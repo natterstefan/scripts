@@ -1,3 +1,10 @@
+### [1.0.4](https://github.com/natterstefan/scripts/compare/1.0.3...1.0.4) (2021-04-18)
+
+
+### Bug Fixes
+
+* remove mix of import and module.exports in version command ([56a9b43](https://github.com/natterstefan/scripts/commit/56a9b431328646d4c337a2087e6c1e9fde44729c))
+
 ### [1.0.3](https://github.com/natterstefan/scripts/compare/1.0.2...1.0.3) (2021-04-18)
 
 
