@@ -1,3 +1,10 @@
+### [1.0.3](https://github.com/natterstefan/scripts/compare/1.0.2...1.0.3) (2021-04-18)
+
+
+### Bug Fixes
+
+* added @tsconfig/node14, main in package.json and requires min. node@14 ([2ae715c](https://github.com/natterstefan/scripts/commit/2ae715c23422aff1f7b83d813843f2052926a30d))
+
 ### [1.0.2](https://github.com/natterstefan/scripts/compare/1.0.1...1.0.2) (2021-04-18)
 
 
