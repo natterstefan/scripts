@@ -14,10 +14,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: node_modules
-      #     key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       - run: chmod -R +x ./node_modules/.bin
 
@@ -29,10 +29,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: node_modules
-      #     key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
       - run: yarn lint
       - run: yarn test
 
@@ -44,10 +45,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: node_modules
-      #     key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
       - run: yarn build
       - uses: actions/upload-artifact@v1
         with:
@@ -63,10 +65,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      # - uses: actions/cache@v1
-      #   with:
-      #     path: node_modules
-      #     key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: natterstefan-scripts-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/download-artifact@v1
         with:
           name: build
