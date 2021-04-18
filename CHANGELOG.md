@@ -1,3 +1,12 @@
+#@natterstefan/scripts Changelog
+
+## [1.1.0](https://github.com/natterstefan/scripts/compare/1.0.5...1.1.0) (2021-04-18)
+
+
+### Features
+
+* added chalk, figlet to help command, as well as version and description ([e48ff15](https://github.com/natterstefan/scripts/commit/e48ff15cd955852ec13e35627fd6551b801530a2))
+
 ### [1.0.5](https://github.com/natterstefan/scripts/compare/1.0.4...1.0.5) (2021-04-18)
 
 
