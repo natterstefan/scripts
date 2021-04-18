@@ -1,6 +1,9 @@
 # @natterstefan/scripts
 
+[![npm version](https://badge.fury.io/js/%40natterstefan%2Fscripts.svg)](https://badge.fury.io/js/%40natterstefan%2Fscripts)
 [![Node CI](https://github.com/natterstefan/scripts/actions/workflows/ci.yml/badge.svg)](https://github.com/natterstefan/scripts/actions/workflows/ci.yml)
+[![GitHub issues](https://img.shields.io/github/issues/natterstefan/scripts)](https://github.com/natterstefan/scripts/issues)
+[![GitHub license](https://img.shields.io/github/license/natterstefan/scripts)](https://github.com/natterstefan/scripts/blob/main/LICENSE)
 
 Utility package for several scripts I use throughout the day.
 
@@ -33,11 +36,11 @@ node build/bin/index.js
 
 ```bash
 # with npx
-npx ns-scripts [command]
+npx @natterstefan/scripts --help
 
 # install globally
-npm i ns-scripts -g
-ns-scripts [command]
+npm i @natterstefan/scripts -g
+@natterstefan/scripts --help
 ```
 
 ### Node
@@ -60,3 +63,23 @@ publish the package. See corresponding GitHub workflow [release.yml](.github/wor
 ## License
 
 [Apache 2.0](LICENSE)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://natterstefan.me/"><img src="https://avatars.githubusercontent.com/u/1043668?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stefan Natter</b></sub></a><br /><a href="#ideas-natterstefan" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
