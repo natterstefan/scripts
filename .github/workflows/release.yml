@@ -78,9 +78,9 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: build
-      - name: Display structure of downloaded files
-        run: ls -R
-      - run: npx semantic-release --dry-run
+      # - name: Display structure of downloaded files
+      #   run: ls -R
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
