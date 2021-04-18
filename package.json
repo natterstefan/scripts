@@ -5,9 +5,10 @@
   "author": "Stefan Natter (https://natterstefan.me)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/natterstefan/scripts#readme",
+  "main": "./bin/index.js",
   "bin": "./bin/index.js",
   "engines": {
-    "node": ">=12.0.0 || >=14.0.0"
+    "node": ">=14.0.0"
   },
   "files": [
     "bin",
@@ -21,6 +22,7 @@
     "dev": "ts-node bin/index.ts",
     "build": "tsc -p tsconfig.build.json",
     "lint": "tsc && eslint --cache \"./**/*.{ts,tsx}\"",
+    "local": "npm i -g && @natterstefan/scripts",
     "prebuild": "rimraf build",
     "prepare": "is-ci || husky install",
     "pretest": "yarn build",
@@ -39,6 +41,7 @@
     "@semantic-release/github": "^7.2.1",
     "@semantic-release/npm": "^7.1.1",
     "@semantic-release/release-notes-generator": "^9.0.2",
+    "@tsconfig/node14": "^1.0.0",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.41",
     "all-contributors-cli": "^6.20.0",
