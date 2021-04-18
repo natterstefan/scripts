@@ -1,6 +1,6 @@
 # @natterstefan/scripts
 
-[![Node CI](https://github.com/natterstefan/scripts.git/actions/workflows/ci.yml/badge.svg)](https://github.com/natterstefan/scripts.git/actions/workflows/ci.yml)
+[![Node CI](https://github.com/natterstefan/scripts/actions/workflows/ci.yml/badge.svg)](https://github.com/natterstefan/scripts/actions/workflows/ci.yml)
 
 ## Setup
 

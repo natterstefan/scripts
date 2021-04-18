@@ -4,7 +4,7 @@
   "description": "",
   "author": "Stefan Natter (https://natterstefan.me)",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/natterstefan/scripts.git#readme",
+  "homepage": "https://github.com/natterstefan/scripts#readme",
   "bin": {
     "ns-scripts": "./bin/index.js"
   },
@@ -52,9 +52,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natterstefan/scripts.git.git"
+    "url": "git+https://github.com/natterstefan/scripts.git"
   },
   "bugs": {
-    "url": "https://github.com/natterstefan/scripts.git/issues"
+    "url": "https://github.com/natterstefan/scripts/issues"
   }
 }
