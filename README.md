@@ -2,6 +2,8 @@
 
 [![Node CI](https://github.com/natterstefan/scripts/actions/workflows/ci.yml/badge.svg)](https://github.com/natterstefan/scripts/actions/workflows/ci.yml)
 
+Utility package for several scripts I use throughout the day.
+
 ## Setup
 
 ```bash
@@ -21,7 +23,8 @@ yarn build
 yarn dev
 
 # production
-node ./bin
+yarn build
+node build/bin/index.js
 ```
 
 ## Usage
@@ -46,11 +49,8 @@ console.log(getGitVersion());
 
 ## Publish
 
-```bash
-yarn build
-cd build
-yarn publish
-```
+[semantic-release](https://github.com/semantic-release) is used to deploy and
+publish the package. See corresponding GitHub workflow [release.yml](.github/workflows/release.yml).
 
 ## References
 
