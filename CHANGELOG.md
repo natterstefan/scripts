@@ -1,3 +1,10 @@
+### [1.0.2](https://github.com/natterstefan/scripts/compare/1.0.1...1.0.2) (2021-04-18)
+
+
+### Bug Fixes
+
+* fixed bin not working with scoped package name ([45a5bae](https://github.com/natterstefan/scripts/commit/45a5bae660714718eec27750fa1e13801f85cd3d))
+
 ### [1.0.1](https://github.com/natterstefan/scripts/compare/1.0.0...1.0.1) (2021-04-18)
 
 
