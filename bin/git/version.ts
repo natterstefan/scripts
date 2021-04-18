@@ -8,7 +8,7 @@ module.exports = (program: commander.Command) => {
   // $ ns-script gv
   program
     .command('git-version') // sub-command name
-    .alias('cv') // alias name
+    .alias('gv') // alias name
     // command description
     .description(
       'returns the current tag, or hash of the last commit with a dirty flag when files were modified but not committed.',
