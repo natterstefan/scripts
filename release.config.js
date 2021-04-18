@@ -28,20 +28,7 @@ module.exports = {
     // publish on npm
     '@semantic-release/npm',
     // publish a new release on github
-    [
-      '@semantic-release/github',
-      {
-        assets: [
-          '**/*.js',
-          '**/*.d.ts',
-          'CHANGELOG.md',
-          'LICENSE',
-          'package.json',
-          'README.md',
-          'yarn.lock',
-        ],
-      },
-    ],
+    '@semantic-release/github',
     //  commit release assets to the project's git repository.
     '@semantic-release/git',
   ],
