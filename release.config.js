@@ -27,7 +27,7 @@ module.exports = {
     [
       '@semantic-release/changelog',
       {
-        changelogTitle: '#@natterstefan/scripts Changelog',
+        changelogTitle: '# @natterstefan/scripts Changelog',
       },
     ],
     // publish on npm
